@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+// import "fmt"
 
 func RetainFirstHalf(str string) string {
 	// Converting it to rune first
@@ -13,6 +13,14 @@ func RetainFirstHalf(str string) string {
 	return string(finalStr)
 }
 
-func main() {
-	fmt.Println(RetainFirstHalf("Welcome"))
-}
+// func RetainFirstHalf(str string) string {
+// 	aString := []rune(str)
+
+// 	finalStriing := aString[:len(aString)/2]
+
+// 	return string(finalStriing)
+// }
+
+// func main() {
+// 	fmt.Println(RetainFirstHalf("Oluwatimilehin"))
+// }

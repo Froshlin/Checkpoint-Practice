@@ -16,3 +16,4 @@ func CheckNumber(arg string) bool {
 // func main() {
 // 	fmt.Println(CheckNumber("eww"))
 // }
+

@@ -5,17 +5,17 @@ import "fmt"
 func FirstWord(s string) string {
 	i := 0
 
-	for i < len(s) && s[i] == ' ' {
+	for i < len(s)-1 && s[i] == ' ' {
 		i++
 	}
 
-	if i == len(s) {
+	if i == len(s)-1 {
 		return "\n"
 	}
 
 	start := i
 
-	for i < len(s) && s[i] != ' ' {
+	for i < len(s)-1 && s[i] != ' ' {
 		i++
 	}
 	return s[start:i]

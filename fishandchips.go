@@ -1,27 +1,29 @@
 package main
 
-// import "fmt"
+import "fmt"
 
 func FishAndChips(n int) string {
 	if n < 0 {
-		return "Invalid input"
+		return "error: number is negative"
 	}
 
-	if (n%3 == 0) && (n%5 == 0) {
-		return "FishAndChips"
+	if n%2 == 0 && n%3 == 0 {
+		return "fish and chips"
+	}
+
+	if n%2 == 0 {
+		return "fish"
 	}
 
 	if n%3 == 0 {
-		return "Fish"
+		return "chips"
 	}
 
-	if n%5 == 0 {
-		return "Chips"
-	}
-
-	return "Na only Garri Dey o"
+	return "error: non divisible"
 }
 
-// func main() {
-// 	fmt.Println(FishAndChips(15))
-// }
+func main() {
+	fmt.Println(FishAndChips(4))
+	fmt.Println(FishAndChips(9))
+	fmt.Println(FishAndChips(6))
+}

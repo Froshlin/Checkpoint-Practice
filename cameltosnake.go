@@ -1,26 +1,37 @@
 package main
 
-import (
-	"fmt"
-	"unicode"
-)
+import "fmt"
 
-func camelToSnake(s string) string {
+func CamelToSnakeCase(s string) string {
+	if len(s) == 0 {
+		return ""
+	}
+
 	result := ""
 
-	for i, char := range s {
-		if unicode.IsUpper(char) {
-			if i != 0 {
-				result = result + "_"
-			}
-			result += string(unicode.ToLower(char))
-		} else {
-			result += string(char)
+	for i := 0; i < len(s); i++ {
+		char := s[i]
+
+		if !(char >= 'a' && char <= 'z' || char >= 'A' && char <= 'Z') {
+			return s
 		}
+
+		if i == len(s)-1 && char >= 'A' && char <= 'Z' {
+			return s
+		}
+
+		if i > 0 && char >= 'A' && char <= 'Z' && s[i-1] >= 'A' && s[i-1] <= 'Z' {
+			return s
+		}
+
+		if i > 0 && char >= 'A' && char <= 'Z' {
+			result += "_"
+		}
+		result += string(char)
 	}
 	return result
 }
 
 func main() {
-	fmt.Println(camelToSnake("HelloWorld")) // hello_world
+	fmt.Println(CamelToSnakeCase("HelloWorld"))
 }
